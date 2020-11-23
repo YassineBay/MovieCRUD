@@ -1,0 +1,25 @@
+<div *ngIf="movie">
+    <form [formGroup]="formGroup">
+        <div class="form-group">
+            <label for="mvname">Name</label>
+            <input type="text" class="form-control" id="mvname" aria-describedby="mvnameHelp" [(ngModel)]="movie.name"
+                placeholder="Enter Movie Name" name="mvname" formControlName="name">
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <span *ngIf="name.errors.required">Name is Required !</span>
+                <span *ngIf="name.errors.maxlength">Name must be less than
+                    20</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mvgenre">Genre</label>
+            <input type="text" class="form-control" id="mvgenre" placeholder="Enter Movie Genre" name="mvgenre"
+                formControlName="genre" [(ngModel)]="movie.genre">
+            <div class="alert alert-danger" *ngIf="genre.invalid && (genre.dirty || genre.touched)">
+                <span *ngIf="genre.errors.required">Genre is Required !</span>
+                <span *ngIf="genre.errors.maxlength">Genre must be less than
+                    10</span>
+            </div>
+        </div>
+        <button type="submit" (click)="updateMovie()" class="btn btn-primary">Save</button>
+    </form>
+</div>

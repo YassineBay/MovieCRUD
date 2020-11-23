@@ -1,0 +1,25 @@
+{
+  "profile": {
+    "name": "typicode"
+  },
+  "movies": [
+    {
+      "id": 2,
+      "name": "HoliDate",
+      "genre": "Comedy",
+      "isRented": true
+    },
+    {
+      "name": "Saw",
+      "genre": "Horror",
+      "isRented": false,
+      "id": 3
+    },
+    {
+      "name": "The Ring",
+      "genre": "Horror",
+      "isRented": false,
+      "id": 5
+    }
+  ]
+}
