@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="formGroup" (ngSubmit)="addRent()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                        placeholder="Enter Name" name="rtname" formControlName="name">
+                    <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                        <span *ngIf="name.errors.required">Name is Required !</span>
+                        <span *ngIf="name.errors.maxlength">Name must be less than
+                            20</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">LastName</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter LastName" name="rtlname"
+                        formControlName="lastname">
+                    <div class="alert alert-danger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+                        <span *ngIf="lastname.errors.required">Lastname is Required !</span>
+                        <span *ngIf="lastname.errors.maxlength">Lastname must be less than
+                            20</span>
+                    </div>
+                </div>
+                <select class="custom-select" name="rtoption" id="option" formControlName="option">
+                    <option selected></option>
+                    <option value="One Day">One Day</option>
+                    <option value="Two Days">Two Days</option>
+                    <option value="Three Days">Three Days</option>
+                </select>
+                <div class="alert alert-danger" *ngIf="option.invalid && (option.dirty || option.touched)">
+                    <span *ngIf="option.errors.required">Option is Required !</span>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Rent Now</button>
+            </form>
+        </div>
+        <div class="col" *ngIf="movie">
+            <div class="alert alert-info">Any Movie You dont return will be reported!</div>
+            <p>{{movie.name}}</p>
+            <p>{{movie.price}}</p>
+        </div>
+    </div>
+</div>

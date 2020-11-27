@@ -4,22 +4,33 @@
   },
   "movies": [
     {
-      "id": 2,
-      "name": "HoliDate",
-      "genre": "Comedy",
-      "isRented": true
-    },
-    {
-      "name": "Saw",
+      "name": "Saw II",
       "genre": "Horror",
-      "isRented": false,
+      "price": "30",
+      "isRented": true,
       "id": 3
     },
     {
       "name": "The Ring",
+      "genre": "Thriller",
+      "price": "500",
+      "isRented": true,
+      "id": 4
+    },
+    {
+      "name": "Yassine",
       "genre": "Horror",
-      "isRented": false,
+      "price": "500",
+      "isRented": true,
       "id": 5
+    },
+    {
+      "name": "test",
+      "genre": "test",
+      "price": "55",
+      "isRented": false,
+      "id": 6
     }
-  ]
+  ],
+  "Rents": []
 }

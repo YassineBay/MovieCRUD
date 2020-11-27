@@ -19,12 +19,15 @@ export class MovieComponent implements OnInit {
     //FormGroup Initialization
     this.formGroup = new FormGroup({
         name: new FormControl("",[Validators.required,Validators.maxLength(20)]),
-        genre:new FormControl("",[Validators.required,Validators.maxLength(10)])
+        genre:new FormControl("",[Validators.required,Validators.maxLength(10)]),
+        price:new FormControl("",[Validators.required,Validators.pattern("[0-9][0-9]*")])
     });
    }
    //Getting FormGroup Attributes for Validation
    get name() {return this.formGroup.get("name")}
    get genre() {return this.formGroup.get("genre")}
+   get price() {return this.formGroup.get("price")}
+
 
 
   ngOnInit(): void {
@@ -52,6 +55,7 @@ export class MovieComponent implements OnInit {
     if(confirm("Are you sure you want to delete this movie ")){
 this.ms.deleteMovie(id).subscribe(()=>{
   this.ms.getAllMovies().subscribe(result => this.moviesList = result);
+  this.currentMovie = null;
 });
 }
   }
@@ -61,6 +65,7 @@ this.ms.deleteMovie(id).subscribe(()=>{
     console.log(this.movie.id);
     this.ms.updateMovie(this.movie,this.movie.id).subscribe(()=>{
       this.ms.getAllMovies().subscribe(result => this.moviesList = result);
+      this.currentMovie = null;
     })
   }
 

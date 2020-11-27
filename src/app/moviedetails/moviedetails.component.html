@@ -20,6 +20,15 @@
                     10</span>
             </div>
         </div>
+        <div class="form-group">
+            <label for="mvgenre">Price</label>
+            <input type="text" class="form-control" id="mvprice" placeholder="Enter Movie Price" name="mvprice"
+                formControlName="price" [(ngModel)]="movie.price">
+            <div class="alert alert-danger" *ngIf="price.invalid && (price.dirty || price.touched)">
+                <span *ngIf="price.errors.required">Price is Required !</span>
+                <span *ngIf="price.errors.pattern">Price must be positive</span>
+            </div>
+        </div>
         <button type="submit" (click)="updateMovie()" class="btn btn-primary">Save</button>
     </form>
 </div>

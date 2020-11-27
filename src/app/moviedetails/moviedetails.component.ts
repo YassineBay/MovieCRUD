@@ -17,11 +17,16 @@ export class MoviedetailsComponent implements OnInit {
     //FormGroup Initialization
     this.formGroup = new FormGroup({
       name: new FormControl("",[Validators.required,Validators.maxLength(20)]),
-      genre:new FormControl("",[Validators.required,Validators.maxLength(10)])});
+      genre:new FormControl("",[Validators.required,Validators.maxLength(10)]),
+      price:new FormControl("",[Validators.required,Validators.pattern("[0-9][0-9]*")])
+    });
+
   }
   //Getting FormGroup Attributes for Validation
   get name() {return this.formGroup.get("name")}
   get genre() {return this.formGroup.get("genre")}
+  get price() {return this.formGroup.get("price")}
+
 
 
   ngOnInit(): void { }

@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div class="row">
+        <div *ngFor="let m of moviesList">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{m.name}}</h5>
+                        <p class="card-text">{{m.genre}}</p>
+                        <p>Price will be rendred later</p>
+                        <button [routerLink]="['rent',m.id]" [disabled]="m.isRented" class="btn btn-primary">Rent
+                            Movie</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
