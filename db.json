@@ -18,16 +18,9 @@
       "id": 4
     },
     {
-      "name": "Yassine",
-      "genre": "Horror",
-      "price": "500",
-      "isRented": true,
-      "id": 5
-    },
-    {
       "name": "test",
-      "genre": "test",
-      "price": "55",
+      "genre": "testt",
+      "price": "500",
       "isRented": false,
       "id": 6
     }

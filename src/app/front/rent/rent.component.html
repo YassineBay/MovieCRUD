@@ -31,7 +31,7 @@
                 <div class="alert alert-danger" *ngIf="option.invalid && (option.dirty || option.touched)">
                     <span *ngIf="option.errors.required">Option is Required !</span>
                 </div>
-                <button type="submit" class="btn btn-primary mt-3">Rent Now</button>
+                <button type="submit" [disabled]="formGroup.invalid" class="btn btn-primary mt-3">Rent Now</button>
             </form>
         </div>
         <div class="col" *ngIf="movie">

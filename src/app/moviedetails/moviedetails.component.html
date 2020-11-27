@@ -29,6 +29,7 @@
                 <span *ngIf="price.errors.pattern">Price must be positive</span>
             </div>
         </div>
-        <button type="submit" (click)="updateMovie()" class="btn btn-primary">Save</button>
+        <button type="submit" [disabled]="formGroup.invalid" (click)="updateMovie()"
+            class="btn btn-primary">Save</button>
     </form>
 </div>
