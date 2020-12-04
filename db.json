@@ -6,23 +6,16 @@
     {
       "name": "Saw II",
       "genre": "Horror",
-      "price": "30",
+      "price": "300",
       "isRented": true,
       "id": 3
     },
     {
       "name": "The Ring",
       "genre": "Thriller",
-      "price": "500",
+      "price": "5000",
       "isRented": true,
       "id": 4
-    },
-    {
-      "name": "test",
-      "genre": "testt",
-      "price": "500",
-      "isRented": false,
-      "id": 6
     }
   ],
   "Rents": []

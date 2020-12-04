@@ -8,7 +8,6 @@ import { RentComponent } from './rent/rent.component';
 const routes: Routes = [
   { path : "movies" , component: FrontmoviesComponent  },
   { path : "movies/rent/:id" , component: RentComponent }
-
 ];
 
 @NgModule({

@@ -10,12 +10,14 @@ import { MovieComponent } from './movie/movie.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FrontModule } from './front/front.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieComponent,
-    MoviedetailsComponent
+    MoviedetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
