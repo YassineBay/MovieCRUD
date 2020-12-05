@@ -1,0 +1,51 @@
+<div class="wrapper bg-white">
+    <div class="h2 text-center">Vidly</div>
+    <div class="h4 text-muted text-center pt-2">Enter your Registration details</div>
+    <form class="pt-3" [formGroup]="formGroup">
+        <div class="form-group py-2">
+            <div class="input-field"> <span class="fa fa-user p-2"></span> <input type="text"
+                    placeholder="Enter Your Username" required class="" id="username" name="username"
+                    formControlName="username">
+            </div>
+        </div>
+        <div class="alert alert-danger" *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)">
+            <span *ngIf="f.username.errors.required">Username is Required !</span>
+        </div>
+
+        <div class="form-group py-2">
+            <div class="input-field"> <span class="fa fa-user p-2"></span> <input type="text"
+                    placeholder="Enter Your Email Address" required class="" id="email" name="email"
+                    formControlName="email">
+            </div>
+        </div>
+        <div class="alert alert-danger" *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)">
+            <span *ngIf="f.email.errors.required">Email is Required !</span>
+            <span *ngIf="f.email.errors.pattern">Email is in wrong format !</span>
+        </div>
+
+        <div class="form-group py-1 pb-2">
+            <div class="input-field"> <span class="fa fa-lock p-2"></span> <input type="password"
+                    placeholder="Enter Your Password" required class="" id="password" name="password"
+                    formControlName="password"> <button class="btn bg-white text-muted"> <span
+                        class="fa fa-eye-slash"></span> </button> </div>
+        </div>
+        <div class="alert alert-danger" *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)">
+            <span *ngIf="f.password.errors.required">Password is Required !</span>
+        </div>
+        <div class="form-group py-1 pb-2">
+            <div class="input-field"> <span class="fa fa-lock p-2"></span> <input type="password"
+                    placeholder="Confirm Your Password" required class="" id="cpassword" name="cpassword"
+                    formControlName="confirmPassword"> <button class="btn bg-white text-muted"> <span
+                        class="fa fa-eye-slash"></span> </button> </div>
+        </div>
+        <div class="alert alert-danger"
+            *ngIf="f.confirmPassword.invalid && (f.confirmPassword.dirty || f.confirmPassword.touched)">
+            <span *ngIf="f.confirmPassword.errors.required">Password Confirmation is required !</span>
+            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+        </div>
+        <div class="d-flex align-items-start">
+
+        </div> <button class="btn btn-block text-center my-3">Register</button>
+        <div class="text-center pt-3 text-muted">You Already Have an Account? <a href="#">Sign in</a></div>
+    </form>
+</div>

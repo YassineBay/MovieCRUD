@@ -11,13 +11,15 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FrontModule } from './front/front.module';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieComponent,
     MoviedetailsComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
