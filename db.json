@@ -4,21 +4,28 @@
   },
   "movies": [
     {
-      "name": "Saw II",
-      "genre": "Horror",
-      "price": "300",
-      "isRented": true,
-      "id": 3
-    },
-    {
       "name": "The Ring",
-      "genre": "Thriller",
-      "price": "5000",
+      "genre": "The Ring",
+      "price": "500",
+      "imageName": "wallpapersden.com_world-of-warcraft-heroes_wxl.jpg",
       "isRented": true,
-      "id": 4
+      "id": 1
     }
   ],
-  "Rents": [],
+  "Rents": [
+    {
+      "name": "yassine",
+      "lastname": "bayoudh",
+      "rentTime": 3,
+      "id": 1
+    },
+    {
+      "name": "k",
+      "option": "Two Days",
+      "lastname": "eee",
+      "id": 2
+    }
+  ],
   "Users": [
     {
       "username": "YassineBayoudh",

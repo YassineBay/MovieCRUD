@@ -1,5 +1,4 @@
-<h3>Movies</h3>
-<div class="container">
+<div class="container mt-5 ml-0">
     <div class="row">
         <div class="col">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -11,6 +10,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Name</th>
                         <th scope="col">Genre</th>
                         <th scope="col">price</th>
@@ -22,6 +22,8 @@
                 <tbody>
                     <tr *ngFor="let movie of moviesList">
                         <th scope="row">{{movie.id}}</th>
+                        <td><img src="../../assets/images/{{movie.imageName}}" width="50px" height="50px" alt="">
+                        </td>
                         <td>{{movie.name}}</td>
                         <td>{{movie.genre}}</td>
                         <td>{{movie.price}}</td>
@@ -51,7 +53,7 @@
                         </div>
                         <div class="modal-body">
                             <!--Form Here-->
-                            <form [formGroup]="formGroup" (ngSubmit)="addMovie()">
+                            <form [formGroup]="formGroup" (ngSubmit)="addMovie($event)">
                                 <div class="form-group">
                                     <label for="mvname">Name</label>
                                     <input type="text" class="form-control" id="mvname" aria-describedby="mvnameHelp"
@@ -84,6 +86,16 @@
                                         <span *ngIf="price.errors.pattern">Price must be positive</span>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="file">File</label>
+                                    <input formControlName="file" id="file" type="file" class="form-control"
+                                        (change)="onFileChange($event)">
+                                    <div *ngIf="file.touched && file.invalid" class="alert alert-danger">
+                                        <div *ngIf="file.errors.required">File is required.</div>
+                                    </div>
+                                </div>
+
+                                <img [src]="imageSrc" *ngIf="imageSrc" style="height: 200px; width:200px">
                                 <button type="submit" [disabled]="formGroup.invalid"
                                     class="btn btn-primary">Save</button>
 
