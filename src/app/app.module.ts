@@ -1,17 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { AppComponent } from "./app.component";
+import { MovieComponent } from "./movie/movie.component";
+import { MoviedetailsComponent } from "./moviedetails/moviedetails.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { FrontModule } from "./front/front.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
 
-
-import { AppComponent } from './app.component';
-import { MovieComponent } from './movie/movie.component';
-import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
-import { AppRoutingModule } from './app-routing.module';
-import { FrontModule } from './front/front.module';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { RegisterComponent } from './register/register.component';
     MovieComponent,
     MoviedetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +31,10 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     AppRoutingModule,
     FrontModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

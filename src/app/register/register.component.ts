@@ -5,6 +5,9 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
+import { User } from "../Models/User";
+import { NotificationService } from "../Shared/notification.service";
+import { UserService } from "./../Shared/user.service";
 
 @Component({
   selector: "app-register",
@@ -13,16 +16,14 @@ import {
 })
 export class RegisterComponent implements OnInit {
   formGroup: FormGroup;
-  constructor(private formBuilder: FormBuilder) {}
+  user: User;
+  constructor(
+    private formBuilder: FormBuilder,
+    private _userService: UserService,
+    private _notifService: NotificationService
+  ) {}
 
   ngOnInit(): void {
-    /* this.formGroup = new FormGroup({
-      username : new FormControl("",[Validators.required,Validators.maxLength(20)]),
-      email : new FormControl("",[Validators.required,Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$") ]),
-      password : new FormControl("",[Validators.required,Validators.maxLength(40)]),
-      cpassword : new FormControl("",[Validators.required,Validators.maxLength(40)]),
-      
-    });*/
     this.formGroup = this.formBuilder.group(
       {
         username: ["", [Validators.required, Validators.maxLength(20)]],
@@ -42,22 +43,22 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  /*get username() {
-    return this.formGroup.get("username");
-  }
-  get password() {
-    return this.formGroup.get("password");
-  }
-  get email() {
-    return this.formGroup.get("email");
-  }
-  get cpassword() {
-    return this.formGroup.get("cpassword");
-  }*/
-
   get f() {
     return this.formGroup.controls;
   }
+
+  register = () => {
+    this.user = this.formGroup.value;
+    this._userService.register(this.user).subscribe(
+      () => {
+        this.showToasterSuccess("User Registred Successfully", "Success");
+        this.formGroup.reset();
+      },
+      (error) => {
+        this.showToasterError("Something went wrong", "Fail");
+      }
+    );
+  };
 
   MustMatch(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
@@ -74,5 +75,13 @@ export class RegisterComponent implements OnInit {
         matchingControl.setErrors(null);
       }
     };
+  }
+
+  showToasterSuccess(message: string, title: string) {
+    this._notifService.showSuccess(message, title);
+  }
+
+  showToasterError(message: string, title: string) {
+    this._notifService.showError(message, title);
   }
 }

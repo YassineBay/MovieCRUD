@@ -1,10 +1,10 @@
 <div class="wrapper bg-white">
     <div class="h2 text-center">Vidly</div>
     <div class="h4 text-muted text-center pt-2">Enter your login details</div>
-    <form class="pt-3" [formGroup]="formGroup">
+    <form class="pt-3" [formGroup]="formGroup" (ngSubmit)="loginUser()">
         <div class="form-group py-2">
             <div class="input-field"> <span class="fa fa-user p-2"></span> <input type="text"
-                    placeholder="Username or Email Address" required class="" id="username" name="username"
+                    placeholder="Email Address" required class="" id="username" name="username"
                     formControlName="username">
             </div>
         </div>
@@ -23,8 +23,7 @@
         <div class="d-flex align-items-start">
             <div class="remember"> <label class="option text-muted"> Remember me <input type="radio" name="radio"> <span
                         class="checkmark"></span> </label> </div>
-            <div class="ml-auto"> <a href="#" id="forgot">Forgot Password?</a> </div>
-        </div> <button class="btn btn-block text-center my-3">Log in</button>
-        <div class="text-center pt-3 text-muted">Not a member? <a href="#">Sign up</a></div>
+        </div> <button [disabled]="!formGroup.valid" class="btn btn-block text-center my-3">Log in</button>
+        <div class="text-center pt-3 text-muted">Not a member? <a [routerLink]="['/register']">Sign up</a></div>
     </form>
 </div>

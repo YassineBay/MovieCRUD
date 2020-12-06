@@ -18,5 +18,35 @@
       "id": 4
     }
   ],
-  "Rents": []
+  "Rents": [],
+  "Users": [
+    {
+      "username": "YassineBayoudh",
+      "email": "yassine.bayoudh@outlook.com",
+      "password": "Yassine123*",
+      "confirmPassword": "Yassine123*",
+      "id": 1
+    },
+    {
+      "username": "yassine2000",
+      "email": "yassine.bayoudh@esprit.tn",
+      "password": "yassine",
+      "confirmPassword": "yassine",
+      "id": 2
+    },
+    {
+      "username": null,
+      "email": null,
+      "password": null,
+      "confirmPassword": null,
+      "id": 3
+    },
+    {
+      "username": "YassineBayoudh",
+      "email": "yassine.bayoudh@esprit.tn",
+      "password": "aaa",
+      "confirmPassword": "aaa",
+      "id": 4
+    }
+  ]
 }

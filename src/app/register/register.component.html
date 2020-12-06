@@ -1,7 +1,7 @@
 <div class="wrapper bg-white">
     <div class="h2 text-center">Vidly</div>
     <div class="h4 text-muted text-center pt-2">Enter your Registration details</div>
-    <form class="pt-3" [formGroup]="formGroup">
+    <form class="pt-3" [formGroup]="formGroup" (ngSubmit)="register()">
         <div class="form-group py-2">
             <div class="input-field"> <span class="fa fa-user p-2"></span> <input type="text"
                     placeholder="Enter Your Username" required class="" id="username" name="username"
@@ -45,7 +45,9 @@
         </div>
         <div class="d-flex align-items-start">
 
-        </div> <button class="btn btn-block text-center my-3">Register</button>
-        <div class="text-center pt-3 text-muted">You Already Have an Account? <a href="#">Sign in</a></div>
+        </div> <button [disabled]="!formGroup.valid" type="submit"
+            class="btn btn-block text-center my-3">Register</button>
+        <div class="text-center pt-3 text-muted">You Already Have an Account? <a [routerLink]="['/login']">Sign
+                in</a></div>
     </form>
 </div>
