@@ -55,6 +55,7 @@ export class RentComponent implements OnInit {
   addRent = () => {
     this.rent = this.formGroup.value;
     this.rent.user = this.LoggedInuser[0];
+    this.movie.numberInStock--;
     this.rent.movie = this.movie;
     this.rs.addRent(this.rent).subscribe(() => {
       this.movie.isRented = true;

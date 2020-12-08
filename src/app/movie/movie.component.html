@@ -87,6 +87,20 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="mvNumberInStock">Number In Stock</label>
+                                    <input type="number" class="form-control" id="mvNumberInStock"
+                                        aria-describedby="mvNumberInStockHelp" placeholder="Enter Number In Stock"
+                                        name="mvNumberInStock" formControlName="numberInStock">
+                                    <div class="alert alert-danger"
+                                        *ngIf="numberInStock.invalid && (numberInStock.dirty || numberInStock.touched)">
+                                        <span *ngIf="numberInStock.errors.required">numberInStock is Required !</span>
+                                        <span *ngIf="numberInStock.errors.max">number In Stock must be less than
+                                            20</span>
+                                        <span *ngIf="numberInStock.errors.min">number In Stock must be greater than
+                                            0</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="file">File</label>
                                     <input formControlName="file" id="file" type="file" class="form-control"
                                         (change)="onFileChange($event)">

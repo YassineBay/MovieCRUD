@@ -1,0 +1,6 @@
+.movie-theme{
+    display: flex;
+}
+.movie-theme-inside{
+    flex-direction: row;
+}

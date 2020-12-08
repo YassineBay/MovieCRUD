@@ -5,4 +5,5 @@ export class Movie {
   price: number;
   isRented: boolean;
   imageName: string;
+  numberInStock: number;
 }

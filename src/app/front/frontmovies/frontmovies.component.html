@@ -5,10 +5,12 @@
                 <div class="card" style="width: 18rem;">
                     <img src="../../../assets/images/{{m.imageName}}" alt="" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">{{m.name}}</h5>
+                        <h5 class="card-title">{{m.name}} <span class="badge badge-primary">{{m.numberInStock}}</span>
+                        </h5>
                         <p class="card-text">{{m.genre}}</p>
                         <p>{{m.price}} Dt</p>
-                        <button [routerLink]="['rent',m.id]" [disabled]="m.isRented" class="btn btn-primary">Rent
+                        <button [routerLink]="['rent',m.id]" [disabled]="m.numberInStock ==0"
+                            class="btn btn-primary">Rent
                             Movie</button>
                     </div>
                 </div>

@@ -36,8 +36,14 @@
         </div>
         <div class="col" *ngIf="movie">
             <div class="alert alert-info">Any Movie You dont return will be reported!</div>
-            <p>{{movie.name}}</p>
-            <p>{{movie.price}}</p>
+            <div class="movie-theme">
+                <img src="../../../assets/images/{{movie.imageName}}" width="150" height="150" alt="">
+                <div class="ml-3 movie-theme-inside">
+                    <h5>{{movie.name}}</h5>
+                    <p>{{movie.genre}}</p>
+                    <p>{{movie.price}} DT</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -23,6 +23,11 @@ export class MovieComponent implements OnInit {
         Validators.required,
         Validators.maxLength(20),
       ]),
+      numberInStock: new FormControl("", [
+        Validators.required,
+        Validators.max(20),
+        Validators.min(0),
+      ]),
       genre: new FormControl("", [
         Validators.required,
         Validators.maxLength(10),
@@ -38,6 +43,9 @@ export class MovieComponent implements OnInit {
   //Getting FormGroup Attributes for Validation
   get name() {
     return this.formGroup.get("name");
+  }
+  get numberInStock() {
+    return this.formGroup.get("numberInStock");
   }
   get genre() {
     return this.formGroup.get("genre");
@@ -65,11 +73,13 @@ export class MovieComponent implements OnInit {
   //Add Movie
   addMovie = (event) => {
     //this.movie = this.formGroup.value;
+    console.log(event);
     this.movie = {
       name: this.formGroup.get("name").value,
       genre: this.formGroup.get("name").value,
       price: this.formGroup.get("price").value,
-      imageName: event.target[3].files[0].name,
+      imageName: event.target[4].files[0].name,
+      numberInStock: Number(this.formGroup.get("numberInStock").value),
       isRented: false,
     };
     /*this.movie.imageName = event.target[3].files[0].name;
@@ -121,7 +131,7 @@ export class MovieComponent implements OnInit {
   }
 
   saveImageInLocal = (event) => {
-    this.selectedFile = <File>event.target[3].files[0];
+    this.selectedFile = <File>event.target[4].files[0];
     const fd = new FormData();
     this.ms.saveImage(fd, this.selectedFile);
   };
