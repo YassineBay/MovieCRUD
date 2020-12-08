@@ -7,7 +7,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{m.name}}</h5>
                         <p class="card-text">{{m.genre}}</p>
-                        <p>Price will be rendred later</p>
+                        <p>{{m.price}} Dt</p>
                         <button [routerLink]="['rent',m.id]" [disabled]="m.isRented" class="btn btn-primary">Rent
                             Movie</button>
                     </div>

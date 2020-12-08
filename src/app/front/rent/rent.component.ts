@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { Movie } from "src/app/Models/Movie";
 import { Rent } from "src/app/Models/Rent";
+import { User } from "src/app/Models/User";
 import { MovieService } from "src/app/Shared/movie.service";
 import { RentService } from "../Shared/rent.service";
 
@@ -15,6 +16,7 @@ export class RentComponent implements OnInit {
   movie: Movie;
   formGroup: FormGroup;
   rent: Rent;
+  LoggedInuser: User;
 
   constructor(
     private ar: ActivatedRoute,
@@ -23,6 +25,7 @@ export class RentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.LoggedInuser = JSON.parse(localStorage.getItem("User"));
     this.ms
       .getMovieById(this.ar.snapshot.params.id)
       .subscribe((result) => (this.movie = result));
@@ -51,10 +54,13 @@ export class RentComponent implements OnInit {
 
   addRent = () => {
     this.rent = this.formGroup.value;
+    this.rent.user = this.LoggedInuser[0];
+    this.rent.movie = this.movie;
     this.rs.addRent(this.rent).subscribe(() => {
       this.movie.isRented = true;
       this.ms.updateMovie(this.movie, this.ar.snapshot.params.id).subscribe();
       alert("You Have Successfully rented a movie ");
+      this.formGroup.reset();
     });
   };
 }

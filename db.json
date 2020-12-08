@@ -6,24 +6,62 @@
     {
       "name": "The Ring",
       "genre": "The Ring",
-      "price": "500",
-      "imageName": "wallpapersden.com_world-of-warcraft-heroes_wxl.jpg",
+      "price": "30",
+      "imageName": "95738864_1566053470223848_4537756299684741120_n.jpg",
       "isRented": true,
       "id": 1
+    },
+    {
+      "name": "Yassine",
+      "genre": "Yassine",
+      "price": "500",
+      "imageName": "45739865_848238042233927_8027137432040243200_n.jpg",
+      "isRented": true,
+      "id": 2
     }
   ],
   "Rents": [
     {
-      "name": "yassine",
-      "lastname": "bayoudh",
-      "rentTime": 3,
-      "id": 1
+      "name": "Yassine",
+      "option": "Two Days",
+      "lastname": "Bayoudh",
+      "user": {
+        "username": "YassineBayoudh",
+        "email": "yassine.bayoudh@outlook.com",
+        "password": "Yassine123*",
+        "confirmPassword": "Yassine123*",
+        "id": 1
+      },
+      "movie": {
+        "name": "The Ring",
+        "genre": "The Ring",
+        "price": "30",
+        "imageName": "95738864_1566053470223848_4537756299684741120_n.jpg",
+        "isRented": false,
+        "id": 1
+      },
+      "id": 5
     },
     {
-      "name": "k",
+      "name": "Yassine",
       "option": "Two Days",
-      "lastname": "eee",
-      "id": 2
+      "lastname": "Bayoudh",
+      "user": {
+        "username": "YassineBayoudh",
+        "email": "yassine.bayoudh@outlook.com",
+        "password": "Yassine123*",
+        "confirmPassword": "Yassine123*",
+        "id": 1
+      },
+      "movie": {
+        "name": "Yassine",
+        "genre": "Yassine",
+        "price": "500",
+        "imageName": "45739865_848238042233927_8027137432040243200_n.jpg",
+        "isRented": false,
+        "id": 2
+      },
+      "id": 6
     }
   ],
   "Users": [

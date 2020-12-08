@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a *ngFor="let rent of userRentsList" class="list-group-item list-group-item-action"
+                    id="list-{{rent.id}}-list" data-toggle="list" href="#list-home-{{rent.id}}" role="tab"
+                    aria-controls="home">{{rent.movie.name}}</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div *ngFor="let rent of userRentsList" class="tab-pane fade " id="list-home-{{rent.id}}"
+                    role="tabpanel">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            {{rent.movie.name}}
+                        </div>
+                        <div class="card-body">
+                            <img src="../../../assets/images/{{rent.movie.imageName}}" class="img-fluid" width="70"
+                                height="70" alt="">
+                            <h5 class="card-title">{{rent.movie.name}}</h5>
+                            <p class="card-text">{{rent.movie.genre}}</p>
+                            <a href="#" class="btn btn-primary">Return Movie</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            {{rent.option}} left
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
