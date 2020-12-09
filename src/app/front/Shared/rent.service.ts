@@ -2,7 +2,6 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Rent } from "src/app/Models/Rent";
-import { User } from "src/app/Models/User";
 
 @Injectable({
   providedIn: "root",
@@ -18,5 +17,9 @@ export class RentService {
 
   getAllRents = (): Observable<Rent[]> => {
     return this._http.get<Rent[]>(this.url);
+  };
+
+  returnRentedMovie = (id: number): Observable<Rent> => {
+    return this._http.delete<Rent>(this.url + "/" + id);
   };
 }

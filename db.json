@@ -5,7 +5,7 @@
   "movies": [
     {
       "name": "The Ring",
-      "genre": "The Ring",
+      "genre": "Horror",
       "price": "500",
       "imageName": "wallpapersden.com_world-of-warcraft-heroes_wxl.jpg",
       "numberInStock": 5,
@@ -20,77 +20,59 @@
       "numberInStock": 0,
       "isRented": true,
       "id": 2
+    },
+    {
+      "name": "Saw",
+      "genre": "Saw",
+      "price": "30",
+      "imageName": "5OrXSNJ-world-of-warcraft-wallpapers.jpg",
+      "numberInStock": 5,
+      "isRented": true,
+      "id": 3
+    },
+    {
+      "name": "Saw",
+      "genre": "Saw",
+      "price": "500",
+      "imageName": "wp6712791-chromatica-desktop-wallpapers.jpg",
+      "numberInStock": 8,
+      "isRented": false,
+      "id": 4
+    },
+    {
+      "name": "Yassine",
+      "genre": "Yassine",
+      "price": "30",
+      "imageName": "wp6475807-chromatica-desktop-wallpapers.jpg",
+      "numberInStock": 7,
+      "isRented": false,
+      "id": 5
+    },
+    {
+      "name": "Yassine",
+      "genre": "Yassine",
+      "price": "30",
+      "imageName": "ccRm8K0-world-of-warcraft-wallpapers.jpg",
+      "numberInStock": 4,
+      "isRented": false,
+      "id": 6
+    },
+    {
+      "name": "aaaaaaaaaaaaaaaa",
+      "genre": "aaaaaaaaaaaaaaaa",
+      "price": "30",
+      "imageName": "lVJ1pw8-warcraft-wallpapers.jpg",
+      "numberInStock": 5,
+      "isRented": false,
+      "id": 7
     }
   ],
   "Rents": [
     {
       "name": "Yassine",
-      "option": "Two Days",
       "lastname": "Bayoudh",
-      "user": {
-        "username": "YassineBayoudh",
-        "email": "yassine.bayoudh@outlook.com",
-        "password": "Yassine123*",
-        "confirmPassword": "Yassine123*",
-        "id": 1
-      },
-      "movie": {
-        "name": "The Ring",
-        "genre": "The Ring",
-        "price": "30",
-        "imageName": "95738864_1566053470223848_4537756299684741120_n.jpg",
-        "isRented": false,
-        "id": 1
-      },
-      "id": 5
-    },
-    {
-      "name": "Yassine",
-      "option": "Two Days",
-      "lastname": "Bayoudh",
-      "user": {
-        "username": "YassineBayoudh",
-        "email": "yassine.bayoudh@outlook.com",
-        "password": "Yassine123*",
-        "confirmPassword": "Yassine123*",
-        "id": 1
-      },
-      "movie": {
-        "name": "Yassine",
-        "genre": "Yassine",
-        "price": "500",
-        "imageName": "45739865_848238042233927_8027137432040243200_n.jpg",
-        "isRented": false,
-        "id": 2
-      },
-      "id": 6
-    },
-    {
-      "name": "Yassine",
-      "option": "One Day",
-      "lastname": "Bayoudh",
-      "user": {
-        "username": "YassineBayoudh",
-        "email": "yassine.bayoudh@outlook.com",
-        "password": "Yassine123*",
-        "confirmPassword": "Yassine123*",
-        "id": 1
-      },
-      "movie": {
-        "name": "The Ring",
-        "genre": "The Ring",
-        "price": "500",
-        "imageName": "wallpapersden.com_world-of-warcraft-heroes_wxl.jpg",
-        "numberInStock": 5,
-        "isRented": false,
-        "id": 1
-      },
-      "id": 7
-    },
-    {
-      "name": "k",
-      "option": "Three Days",
-      "lastname": "*",
+      "returnDate": "2020-12-12T00:00:00.000Z",
+      "rentTime": 3,
       "user": {
         "username": "YassineBayoudh",
         "email": "yassine.bayoudh@outlook.com",
@@ -104,10 +86,10 @@
         "price": "30",
         "imageName": "wp6475807-chromatica-desktop-wallpapers.jpg",
         "numberInStock": 0,
-        "isRented": false,
+        "isRented": true,
         "id": 2
       },
-      "id": 8
+      "id": 1
     }
   ],
   "Users": [

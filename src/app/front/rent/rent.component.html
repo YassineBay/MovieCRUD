@@ -22,18 +22,22 @@
                             20</span>
                     </div>
                 </div>
-                <select class="custom-select" name="rtoption" id="option" formControlName="option">
+                <!-- <select class="custom-select" name="rtoption" id="option" formControlName="option">
                     <option selected></option>
                     <option value="One Day">One Day</option>
                     <option value="Two Days">Two Days</option>
                     <option value="Three Days">Three Days</option>
                 </select>
+
+
                 <div class="alert alert-danger" *ngIf="option.invalid && (option.dirty || option.touched)">
                     <span *ngIf="option.errors.required">Option is Required !</span>
-                </div>
+                </div>-->
                 <button type="submit" [disabled]="formGroup.invalid" class="btn btn-primary mt-3">Rent Now</button>
             </form>
         </div>
+        <ngb-datepicker #dp formControleName="" [(ngModel)]="model" (navigate)="navigateEvent($event)">
+        </ngb-datepicker>
         <div class="col" *ngIf="movie">
             <div class="alert alert-info">Any Movie You dont return will be reported!</div>
             <div class="movie-theme">
@@ -46,4 +50,5 @@
             </div>
         </div>
     </div>
+
 </div>

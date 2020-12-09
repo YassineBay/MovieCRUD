@@ -20,7 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let movie of moviesList">
+                    <tr *ngFor="let movie of collection | paginate: { itemsPerPage: 5, currentPage: p }">
                         <th scope="row">{{movie.id}}</th>
                         <td><img src="../../assets/images/{{movie.imageName}}" width="50px" height="50px" alt="">
                         </td>
@@ -37,6 +37,7 @@
                     </tr>
                 </tbody>
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 
 
@@ -123,7 +124,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col movie-detail-position">
             <app-moviedetails (modifiedMovie)="updateMovie($event)" [movie]="currentMovie"></app-moviedetails>
         </div>
     </div>

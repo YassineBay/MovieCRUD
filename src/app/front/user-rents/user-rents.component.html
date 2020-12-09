@@ -1,4 +1,7 @@
 <div class="container mt-5">
+    <div *ngIf="userRentsList.length==0">
+        <h2>You Have'nt rented any movie yet ! Go checkout our lastest movies and rent one</h2>
+    </div>
     <div class="row">
         <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist">
@@ -20,10 +23,10 @@
                                 height="70" alt="">
                             <h5 class="card-title">{{rent.movie.name}}</h5>
                             <p class="card-text">{{rent.movie.genre}}</p>
-                            <a href="#" class="btn btn-primary">Return Movie</a>
+                            <a (click)="returnMovie(rent)" class="btn btn-primary">Return Movie</a>
                         </div>
                         <div class="card-footer text-muted">
-                            {{rent.option}} left
+                            {{rent.rentTime}} Days left
                         </div>
                     </div>
 

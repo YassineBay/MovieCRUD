@@ -16,6 +16,10 @@ export class MovieComponent implements OnInit {
   imageSrc: string;
   selectedFile = null;
 
+  //pagination
+  p: number = 1;
+  collection: Movie[] = [];
+
   constructor(private ms: MovieService) {
     //FormGroup Initialization
     this.formGroup = new FormGroup({
@@ -62,7 +66,8 @@ export class MovieComponent implements OnInit {
 
   ngOnInit(): void {
     //Initializing Movies List
-    this.ms.getAllMovies().subscribe((result) => (this.moviesList = result));
+    //this.ms.getAllMovies().subscribe((result) => (this.moviesList = result));
+    this.ms.getAllMovies().subscribe((result) => (this.collection = result));
   }
 
   //Init Movie For @Input

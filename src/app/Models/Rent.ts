@@ -5,7 +5,8 @@ export class Rent {
   id: number;
   name: string;
   lastname: string;
-  rentTime: string;
+  rentTime: number;
   movie: Movie;
   user: User;
+  returnDate: Date;
 }

@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Movie } from 'src/app/Models/Movie';
-import { MovieService } from 'src/app/Shared/movie.service';
+import { Component, OnInit } from "@angular/core";
+import { Movie } from "src/app/Models/Movie";
+import { MovieService } from "src/app/Shared/movie.service";
 
 @Component({
-  selector: 'app-frontmovies',
-  templateUrl: './frontmovies.component.html',
-  styleUrls: ['./frontmovies.component.css']
+  selector: "app-frontmovies",
+  templateUrl: "./frontmovies.component.html",
+  styleUrls: ["./frontmovies.component.css"],
 })
 export class FrontmoviesComponent implements OnInit {
+  moviesList: Movie[] = [];
 
-  moviesList:Movie[] = [];
+  //filtering
+  filterTerm: string;
 
-  constructor(private ms:MovieService) { }
+  constructor(private ms: MovieService) {}
 
   ngOnInit(): void {
-    this.ms.getAllMovies().subscribe(result => this.moviesList = result);
+    this.ms.getAllMovies().subscribe((result) => (this.moviesList = result));
   }
-
 }

@@ -38,32 +38,36 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser = () => {
-    this._userService.login(this.username.value).subscribe(
-      (result) => {
-        if (result[0].password == this.password.value) {
-          localStorage.setItem("User", JSON.stringify(result));
-          this._router.navigate(["/movies"]);
-        } else if (!result) {
+    if (this.username.value == "Admin" && this.password.value == "Admin") {
+      this._router.navigate(["/admin/movies"]);
+    } else {
+      this._userService.login(this.username.value).subscribe(
+        (result) => {
+          if (result[0].password == this.password.value) {
+            localStorage.setItem("User", JSON.stringify(result));
+            this._router.navigate(["/movies"]);
+          } else if (!result) {
+            localStorage.clear();
+            this._notifService.showError(
+              "Something Went Wrong",
+              "Failed To Connect"
+            );
+            return;
+          } else {
+            this._notifService.showError(
+              "Password is incorrect",
+              "Failed To Connect"
+            );
+          }
+        },
+        (error) => {
           localStorage.clear();
           this._notifService.showError(
             "Something Went Wrong",
             "Failed To Connect"
           );
-          return;
-        } else {
-          this._notifService.showError(
-            "Password is incorrect",
-            "Failed To Connect"
-          );
         }
-      },
-      (error) => {
-        localStorage.clear();
-        this._notifService.showError(
-          "Something Went Wrong",
-          "Failed To Connect"
-        );
-      }
-    );
+      );
+    }
   };
 }

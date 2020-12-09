@@ -14,6 +14,7 @@ import { ToastrModule } from "ngx-toastr";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
     FrontModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
